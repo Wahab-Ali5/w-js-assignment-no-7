@@ -69,3 +69,89 @@ console.log(displayCounting(+prompt("Enter start number"), +prompt("Enter last n
 
 // 8)
 
+
+
+function convertDistance(kilometers, unit) {
+  var result;
+
+  switch (unit.toLowerCase()) {
+    case 'meters':
+      result = kilometers * 1000;
+      console.log(kilometers,"km is ",result ,"meters.");
+      break;
+    case 'feet':
+      result = kilometers * 3280.84;
+      console.log(kilometers,"km is ",result ,"feet.");
+      break;
+    case 'inches':
+      result = kilometers * 39370.1;
+      console.log(kilometers,"km is ",result ,"inches.");
+      break;
+    case 'centimeters':
+      result = kilometers * 100000;
+       console.log(kilometers,"km is ",result ,"centimeters.");
+      break;
+    default:
+      console.log("Invalid unit. Please choose from 'meters', 'feet', 'inches', or 'centimeters'.");
+  }
+  return result;
+}
+console.log( convertDistance(kprompt("Enter the distance between two cities in kilometers:"), prompt("Enter the distance between two cities in units:")));
+
+// 9)
+
+function calculateOvertimePay(hoursWorked) {
+  var regularHours = 40;
+  var overtimeRate = 12.00;
+  var overtimePay = 0;
+
+  hoursWorked = Math.floor(hoursWorked); 
+
+  var overtimeHours = hoursWorked > regularHours ? hoursWorked - regularHours : 0;
+
+  switch (true) {
+    case (overtimeHours > 0):
+      overtimePay = overtimeHours * overtimeRate;
+      console.log("Employee worked", hoursWorked, hours);
+      console.log("Overtime hours: ",overtimeHours);
+      console.log("Overtime pay: Rs. ",overtimePay.toFixed(2));
+      break;
+    case (overtimeHours === 0):
+      console.log("Employee worked ",hoursWorked, "hours. No overtime worked.");
+      break;
+    default:
+      console.log("Invalid hours worked. Please enter a non-negative number.");
+  }
+
+  return overtimePay;
+}
+calculateOvertimePay(45);
+
+// 10)
+
+function calculateNotes(withdrawalAmount) {
+  var amount = withdrawalAmount; 
+
+  var notes100 = Math.floor(amount / 100);
+  amount %= 100;
+
+  var notes50 = Math.floor(amount / 50);
+  amount %= 50;
+
+  var notes10 = Math.floor(amount / 10);
+
+  console.log("Amount: ",withdrawalAmount);
+  console.log("Notes of Rs. 100: ",notes100);
+  console.log("Notes of Rs. 50: ",notes50);
+  console.log("Notes of Rs. 10: ",notes10);
+}
+calculateNotes(480); 
+
+// ch=43-46 EVENTS
+
+// 1) done 
+// 2) done
+// 3)
+// 4) done
+
+// END
